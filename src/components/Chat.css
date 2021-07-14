@@ -1,0 +1,25 @@
+.chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 70px;
+    border-bottom: 1px solid #ffffff;
+    /* border: 1px solid red; */
+    gap: 40px;
+    border: 1px solid lightgray;
+}
+
+.chat-image {
+    height: 70px;
+    object-fit: contain;
+    border-radius: 100%;
+}
+
+.chat-details-message {
+    color: gray;
+}
+
+.chat-timestamp {
+    color: lightgray;
+}

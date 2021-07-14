@@ -1,0 +1,56 @@
+:root {
+    --card-alive: linear-gradient(#cb356b, #0575e6);
+    --card-unkdown: linear-gradient(to left, #eb5757, #000000);
+    --card-dead: linear-gradient(to left, #141e30, #a43931);
+    --card-deade: gray;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    border: 5px solid transparent;
+    border-image-slice: 1;
+    border-image-source: var(--card-unkdown);
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+}
+
+.card-image {
+    border-radius: 15px;
+}
+.card-alive {
+    border-image-source: var(--card-alive);
+}
+
+.card-dead {
+    border-image-source: var(--card-dead);
+    opacity: 0.6;
+}
+
+.card-title {
+    color: gray;
+}
+
+.card .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card-button-icon {
+    /* background-color: white; */
+    /* box-shadow: 0px 15px
+     15px 0px rgba(0, 0, 0, 0.3) !important; */
+    font-size: 50px !important;
+}
+
+.card-button-icon-active {
+    color: #f21170 !important;
+}
