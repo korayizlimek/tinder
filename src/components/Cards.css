@@ -4,3 +4,29 @@
     padding: 10px;
     gap: 50px;
 }
+
+.cards-filters {
+    display: flex;
+    margin: 20px;
+    justify-content: space-around;
+}
+
+.cards-filters-buttons {
+    display: flex;
+    gap: 10px;
+    /* border: 1px solid red; */
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-filters-button {
+    color: lightslategray;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid lightslategray;
+}
+
+.button-active {
+    color: #f21170;
+    border: 1px solid #f21170;
+}

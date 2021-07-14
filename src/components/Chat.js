@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Chat.css";
 
-function Chat({ imageUrl, name, message, timestamp }) {
+function Chat({ imageUri, name, message, timestamp }) {
     return (
         <Link to={`/chat/${name}`}>
             <div className="chat">
                 <div className="chat-image">
                     <img
                         className="chat-image"
-                        src={imageUrl}
+                        src={imageUri}
                         alt="ProfileImage"
                     />
                 </div>

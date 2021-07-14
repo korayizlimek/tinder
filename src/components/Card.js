@@ -99,10 +99,7 @@ function Card({
             </div>
         </div>
     );
-    // cinsiyet yasam durumu bilgileri filtre API ile
-    // Filtre birden fazla yapilabilir tur = insan , eğer sonuç bulunamazsa no result sayfası görüntülensin..
     // Karaktere tıklandığı router ile yeni bir sayfa açılsın ve karakter kartındaki bilgilerin aynısı ve son oynadığı 5 bölümün adlarını görüntüleyebilelim.
-    // * Karakter detay sayfasından back buton ile tekrar anasayfa dönebilelim.
 }
 
 export default Card;

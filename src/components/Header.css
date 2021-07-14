@@ -3,7 +3,7 @@
     justify-content: space-between;
     text-align: center;
     align-items: center;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 3px solid lightgray;
 }
 
 .header-logo {
@@ -14,4 +14,5 @@
 
 .header-icon {
     padding: 20px;
+    color: #f21170;
 }

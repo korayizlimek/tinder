@@ -58,12 +58,17 @@ function CardDetail(props) {
                         {character.species}
                     </p>
                 </div>
-                <div className="cardDetail-description">
-                    <p className="cardDetail-description-title">Type :</p>
-                    <p className="cardDetail-description-value">
-                        {character.type}
-                    </p>
-                </div>
+                {character.type && (
+                    <div className="cardDetail-description">
+                        <p className="cardDetail-description-title">
+                            Type :
+                        </p>
+                        <p className="cardDetail-description-value">
+                            {character.type}
+                        </p>
+                    </div>
+                )}
+
                 <div className="cardDetail-description">
                     <p className="cardDetail-description-title">
                         Gender :
@@ -92,7 +97,7 @@ function CardDetail(props) {
                     <p className="cardDetail-description-title">
                         Episodes :
                     </p>
-                    <p>
+                    <p className="cardDetail-description-value">
                         {character.episode?.map((episode, index) => (
                             <span>
                                 {index > 9 && index % 10 === 0 ? (
