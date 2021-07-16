@@ -99,7 +99,6 @@ function Card({
             </div>
         </div>
     );
-    //sil
     // Karaktere tıklandığı router ile yeni bir sayfa açılsın ve karakter kartındaki bilgilerin aynısı ve son oynadığı 5 bölümün adlarını görüntüleyebilelim.
 }
 
