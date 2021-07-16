@@ -11,15 +11,14 @@
     justify-content: space-around;
 }
 
-.cards-filters-buttons {
+.btns {
     display: flex;
     gap: 10px;
-    /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
 }
 
-.cards-filters-button {
+.btn {
     color: lightslategray;
     padding: 10px;
     background-color: transparent;
@@ -29,4 +28,36 @@
 .button-active {
     color: #f21170;
     border: 1px solid #f21170;
+}
+
+.pagination {
+    margin: 30px;
+}
+
+@media (min-width: 320px) {
+    .cards-container {
+        grid-template-columns: auto;
+    }
+}
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+}
+@media (min-width: 1024px) {
+    .cards-container {
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+    }
+}
+@media (min-width: 1440px) {
+    .cards-container {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+@media (min-width: 2560px) {
+    .cards-container {
+        grid-template-columns: auto auto auto auto auto;
+    }
 }

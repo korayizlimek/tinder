@@ -10,7 +10,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 30px;
+    /* padding: 20px; */
+    /* 30px paddin */
     border: 5px solid transparent;
     border-image-slice: 1;
     border-image-source: var(--card-unkdown);
@@ -20,10 +21,11 @@
     background-repeat: no-repeat;
     background-position: center;
     color: black;
+    padding: 15px;
 }
 
 .card-image {
-    border-radius: 15px;
+    border-radius: 10px;
 }
 .card-alive {
     border-image-source: var(--card-alive);
