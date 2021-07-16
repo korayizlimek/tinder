@@ -1,11 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cards from "./components/Cards";
 import CardDetail from "./components/CardDetail";
 import Chats from "./components/Chats";
