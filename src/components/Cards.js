@@ -23,8 +23,13 @@ function Cards() {
     //TODO create Async function
 
     useEffect(() => {
+        setPage(1);
         getApi();
-    }, [filterStatus, filterSpecies, filterGender, page]);
+    }, [filterStatus, filterSpecies, filterGender]);
+
+    useEffect(() => {
+        getApi();
+    }, [page]);
 
     function getApi() {
         axios
