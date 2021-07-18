@@ -9,6 +9,7 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { IconButton } from "@material-ui/core";
+import Episode from "./Episode";
 
 function CardDetail(props) {
     const params = useParams().character;
@@ -22,9 +23,15 @@ function CardDetail(props) {
     useEffect(() => {
         axios
             .get(`https://rickandmortyapi.com/api/character/${params}`)
-            .then((res) => setCharacter(res.data))
-            .catch((err) => console.log("cart detail error: ", err));
+            .then((res) => getCharacter(res.data))
+            .catch((err) => console.log("Cart detail error: ", err));
     }, []);
+
+    const getCharacter = (characters) => {
+        let lastEpisodes = characters.episode.reverse().slice(0, 5);
+        characters.episode = lastEpisodes;
+        setCharacter(characters);
+    };
 
     return (
         <div className="cardDetail">
@@ -98,20 +105,8 @@ function CardDetail(props) {
                         Episodes :
                     </p>
                     <p className="cardDetail-description-value">
-                        {character.episode?.map((episode, index) => (
-                            <span>
-                                {index > 9 && index % 10 === 0 ? (
-                                    <br />
-                                ) : (
-                                    ""
-                                )}
-                                {
-                                    episode.split(
-                                        "https://rickandmortyapi.com/api/episode/"
-                                    )[1]
-                                }
-                                ,
-                            </span>
+                        {character.episode?.map((episode) => (
+                            <Episode episode={episode} />
                         ))}
                     </p>
                 </div>

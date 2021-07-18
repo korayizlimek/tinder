@@ -10,8 +10,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    /* padding: 20px; */
-    /* 30px paddin */
     border: 5px solid transparent;
     border-image-slice: 1;
     border-image-source: var(--card-unkdown);
@@ -54,4 +52,8 @@
 
 .card-button-icon-active {
     color: #f21170 !important;
+}
+
+.card:hover {
+    box-shadow: 0px 6px 6px 6px rgba(63, 45, 45, 0.8);
 }
