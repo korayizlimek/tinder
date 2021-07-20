@@ -4,6 +4,7 @@ import Cards from "./components/Cards";
 import CardDetail from "./components/CardDetail";
 import Chats from "./components/Chats";
 import ChatScreen from "./components/ChatScreen";
+import Profile from "./components/Profile";
 
 function App() {
     return (
@@ -25,6 +26,10 @@ function App() {
                     <Route exact path="/detail/:character">
                         <Header backButton="/" />
                         <CardDetail />
+                    </Route>
+                    <Route exact path="/profile">
+                        {/* <Header /> */}
+                        <Profile />
                     </Route>
                 </Switch>
             </Router>

@@ -5,9 +5,6 @@ import Card from "./Card";
 import NotResult from "./NotResult";
 
 // Icons
-import WcIcon from "@material-ui/icons/Wc";
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import RedditIcon from "@material-ui/icons/Reddit";
 import Filter from "./Filter";
 
 function Cards() {

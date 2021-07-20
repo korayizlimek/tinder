@@ -17,7 +17,12 @@ function Header({ backButton }) {
                         fontSize="large"
                     />
                 ) : (
-                    <PersonIcon className="header-icon" fontSize="large" />
+                    <Link to="/profile">
+                        <PersonIcon
+                            className="header-icon"
+                            fontSize="large"
+                        />
+                    </Link>
                 )}
             </IconButton>
             <IconButton color="secondary">
