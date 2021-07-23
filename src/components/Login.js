@@ -24,9 +24,9 @@ function Login() {
             <label htmlFor="password">Şifreniz:</label>
             <input type="password" className="input input-password" />
           </div>
-          <button className="btn user-btn">Giriş Yap</button>
+          <button className="button user-btn">Giriş Yap</button>
           <p>Henüz hesabınız yok mu ? Hemen Kayıt olun</p>
-          <button className="btn user-btn">Kaydol</button>
+          <button className="button user-btn">Kaydol</button>
         </div>
       </div>
     </div>

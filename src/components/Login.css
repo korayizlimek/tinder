@@ -18,7 +18,6 @@
 
 .login-title {
   color: white;
-  /* color: #f21170; */
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -61,7 +60,7 @@
   margin: auto auto;
 }
 
-.btn {
+.button {
   color: lightslategray;
   padding: 10px;
   background-color: transparent;

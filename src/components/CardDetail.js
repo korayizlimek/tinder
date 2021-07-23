@@ -10,27 +10,26 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { IconButton } from "@material-ui/core";
 import Episode from "./Episode";
+import { useDispatch, useSelector } from "react-redux";
+import { getCharacterDetails } from "../actions";
 
-function CardDetail(props) {
-  const params = useParams().character;
+function CardDetail() {
+  const id = useParams().character;
 
-  const [character, setCharacter] = useState({});
+  const character = useSelector((state) => state.characterDetails);
 
   const [favorite, setFavorite] = useState(false);
   const [star, setStar] = useState(false);
   const [flash, setFlash] = useState(false);
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios
-      .get(`https://rickandmortyapi.com/api/character/${params}`)
-      .then((res) => getCharacter(res.data))
-      .catch((err) => console.log("Cart detail error: ", err));
+    dispatch(getCharacterDetails(id));
   }, []);
 
   const getCharacter = (characters) => {
-    let lastEpisodes = characters.episode.reverse().slice(0, 5);
-    characters.episode = lastEpisodes;
-    setCharacter(characters);
+    let lastEpisodes = characters.episode?.reverse().slice(0, 5);
+    return lastEpisodes;
   };
 
   return (
@@ -89,7 +88,7 @@ function CardDetail(props) {
         <div className="cardDetail-description">
           <p className="cardDetail-description-title">Episodes :</p>
           <p className="cardDetail-description-value">
-            {character.episode?.map((episode) => (
+            {getCharacter(character)?.map((episode) => (
               <Episode episode={episode} />
             ))}
           </p>
