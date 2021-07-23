@@ -1,26 +1,26 @@
 .cards-filters {
-    display: flex;
-    margin: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  margin: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .btns {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
 }
 
 .btn {
-    color: lightslategray;
-    padding: 10px;
-    background-color: transparent;
-    border: 1px solid lightslategray;
+  color: lightslategray;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid lightslategray;
 }
 
 .button-active {
-    color: #f21170;
-    border: 1px solid #f21170;
+  color: #f21170;
+  border: 1px solid #f21170;
 }
