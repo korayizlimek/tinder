@@ -25,7 +25,7 @@ function Login() {
             <input type="password" className="input input-password" />
           </div>
           <button className="button user-btn">Giriş Yap</button>
-          <p>Henüz hesabınız yok mu ? Hemen Kayıt olun</p>
+          <p>Henüz hesabınız yok mu? Hemen Kayıt olun</p>
           <button className="button user-btn">Kaydol</button>
         </div>
       </div>
