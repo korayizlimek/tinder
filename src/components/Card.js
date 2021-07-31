@@ -33,17 +33,41 @@ function Card({
     cardClassName = "";
   }
 
+  const cartContentInformations = ["name", "status"];
+
+  const contentFirstLetterUpperCase = (information) => {
+    return information.charAt(0).toUpperCase() + information.slice(1);
+  };
+
+  const contentInformationToPropsName = (information) => {
+    return information;
+  };
+
   return (
     <div className={`card ${cardClassName}`}>
       <Link to={`/detail/${id}`}>
-        <img className="card-image" src={avatarUrl} alt="avatar" />
-
+        <div className="card-image-section">
+          <img className="card-image" src={avatarUrl} alt="avatar" />
+        </div>
+        <div className="card-content-section"></div>
         {name !== "" && (
           <p>
             <span className="card-title">Name:</span> {name}
           </p>
         )}
-
+        //! burasi cok onemli
+        {cartContentInformations.map(
+          (information) =>
+            information !== "" && (
+              <p>
+                <span className="card-title">
+                  {contentFirstLetterUpperCase(information)}:
+                </span>
+                {contentInformationToPropsName(information)}
+              </p>
+            )
+        )}
+        {/* 
         {status !== "" && (
           <p>
             <span className="card-title">Status:</span> {status}
@@ -68,7 +92,7 @@ function Card({
           <p>
             <span className="card-title">Location:</span> {location}{" "}
           </p>
-        )}
+        )} */}
       </Link>
       <div className="card-buttons">
         <IconButton onClick={() => setStar(!star)}>
