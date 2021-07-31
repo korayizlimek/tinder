@@ -1,0 +1,9 @@
+.messages {
+  margin-top: 20px;
+  display: flex;
+  /* flex: 1; */
+  flex-direction: column;
+  /* width: 40%; */
+  align-items: center;
+  justify-content: center;
+}
