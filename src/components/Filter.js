@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { getCharacters } from "../redux/actions";
 
 function Filter({ currentPage }) {
+  //filterGroup
   const [filterStatus, setFilterStatus] = useState("");
   const [filterSpecies, setFilterSpecies] = useState("");
   const [filterGender, setFilterGender] = useState("");

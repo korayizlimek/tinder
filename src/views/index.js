@@ -4,5 +4,6 @@ import Login from "./login/Login";
 import NotResult from "./notResult/NotResult";
 import Messages from "./messages/Messages";
 import Message from "./message/Message";
+import Home from "./home/Home";
 
-export { CardDetail, Cards, Login, Messages, Message, NotResult };
+export { CardDetail, Home, Cards, Login, Messages, Message, NotResult };

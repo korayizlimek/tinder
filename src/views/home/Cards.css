@@ -1,4 +1,4 @@
-.cards-container {
+/* .cards-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 10px;
@@ -39,4 +39,4 @@
     .cards-container {
         grid-template-columns: auto auto auto auto auto;
     }
-}
+} */
