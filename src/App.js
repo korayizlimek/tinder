@@ -1,8 +1,9 @@
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Profile from "./components/Profile";
-import { Cards, Messages, Message, CardDetail } from "./views";
+import { Messages, Message, CardDetail, Home } from "./views";
 // import CardDetail from "./views/detail/CardDetail";
+import "../src/css/index.css";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Header />
-            <Cards />
+            <Home />
           </Route>
           <Route exact path="/chat">
             <Header backButton="/" />

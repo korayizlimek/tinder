@@ -1,0 +1,11 @@
+.btn {
+  color: lightslategray;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid lightslategray;
+}
+
+.button-active {
+  color: #f21170;
+  border: 1px solid #f21170;
+}

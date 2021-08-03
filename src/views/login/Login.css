@@ -1,4 +1,4 @@
-.login {
+/* .login {
   background-image: url("../../assets/images/loginBackground.png");
   background-color: #262c3a;
   background-attachment: fixed;
@@ -7,19 +7,17 @@
   background-position: fixed;
   min-height: 100vh;
   z-index: 0;
-  /* position: relative; */
   border: 1px solid green;
 }
 
 .login-section {
   position: relative;
   width: 60%;
-  /* max-height: 250px; */
   margin-left: 5%;
   margin-top: 5%;
 }
 
-.login-title {
+.login-section-title {
   color: white;
   text-align: center;
   margin-left: auto;
@@ -31,32 +29,31 @@
   font-size: 3em;
 }
 
-.login-informations {
+.login-section-informations {
   width: 30%;
   display: flex;
   flex-direction: column;
-  /* gap: 10px; */
+  gap: 10px;
   background-color: white;
-  /* width: 100%; */
   margin: auto;
   margin-top: 20px;
   border-radius: 20px;
   padding: 10px;
 }
 
-.login-information-input {
+.login-section-informations-input {
   display: flex;
   flex-direction: column;
 }
 
-.login-information-input > input {
+.login-section-informations-input input {
   height: 1.3em;
   font-size: 1.3em;
   border-radius: 10px;
   padding: 1px;
 }
 
-.login-information-input > input:focus {
+.login-section-informations-input input:focus {
   height: 1.3em;
   font-size: 1.3em;
   border-radius: 10px;
@@ -64,12 +61,12 @@
   padding: 1px;
 }
 
-.login-information-name {
+.login-section-informations-name {
   align-items: center;
   margin: auto auto;
 }
 
-.button {
+.login-section-informations-button {
   color: lightslategray;
   padding: 10px;
   background-color: transparent;
@@ -77,7 +74,7 @@
   border-radius: 10px;
 }
 
-.user-btn {
+.button {
   margin: 10px 50px;
 }
 
@@ -87,6 +84,6 @@
   color: black;
 }
 
-.login-informations > p {
+.login-section-informations > p {
   margin: 0 15px;
-}
+} */

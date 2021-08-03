@@ -7,76 +7,43 @@ import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import RedditIcon from "@material-ui/icons/Reddit";
 import { useDispatch } from "react-redux";
 import { getCharacters } from "../redux/actions";
+import FilterStatus from "./FilterStatus";
+import FilterSpecies from "./FilterSpecies";
+import FilterGender from "./FilterGender";
 
-function Filter({ currentPage }) {
+function Filter({ currentPage, changeCurrentPage }) {
   //filterGroup
-  const [filterStatus, setFilterStatus] = useState("");
-  const [filterSpecies, setFilterSpecies] = useState("");
-  const [filterGender, setFilterGender] = useState("");
+  // const [filterStatus, setFilterStatus] = useState("");
+  // const [filterSpecies, setFilterSpecies] = useState("");
+  // const [filterGender, setFilterGender] = useState("");
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    const resetCurrentPage = 1;
-    dispatch(
-      getCharacters(
-        resetCurrentPage,
-        filterStatus,
-        filterGender,
-        filterSpecies
-      )
-    );
-  }, [filterStatus, filterSpecies, filterGender]);
+  // useEffect(() => {
+  //   const resetCurrentPage = 1;
+  //   refreshCharacters(
+  //     resetCurrentPage,
+  //     filterStatus,
+  //     filterSpecies,
+  //     filterGender
+  //   );
+  //   changeCurrentPage(resetCurrentPage);
+  // }, [filterStatus, filterSpecies, filterGender]);
 
-  useEffect(() => {
-    console.log("new", currentPage);
-    dispatch(
-      getCharacters(currentPage, filterStatus, filterGender, filterSpecies)
-    );
-  }, [currentPage]);
+  // useEffect(() => {
+  //   refreshCharacters(currentPage);
+  // }, [currentPage]);
 
-  const classNameFilterStatus = (value) => {
-    let className = "btn ";
-    if (filterStatus === value) {
-      className += "button-active";
-    }
-    return className;
-  };
-
-  const classNameFilterSpecies = (value) => {
-    let className = "btn ";
-    if (filterSpecies === value) {
-      className += "button-active";
-    }
-    return className;
-  };
-  const classNameFilterGender = (value) => {
-    let className = "btn ";
-    if (filterGender === value) {
-      className += "button-active";
-    }
-    return className;
-  };
-
-  const handleFilterStatus = (e) => {
-    setFilterStatus(e.target.value);
-  };
-  const handleFilterSpecies = (e) => {
-    setFilterSpecies(e.target.value);
-  };
-  const handleFilterGender = (e) => {
-    setFilterGender(e.target.value);
-  };
-
-  const statusButtonsNames = ["", "Alive", "Dead", "Unknown"];
-  const speciesButtonsNames = ["", "Human", "Alien"];
-  const genderButtonsNames = [
-    "",
-    "Male",
-    "Female",
-    "Genderless",
-    "Unknown",
-  ];
+  // const refreshCharacters = (
+  //   currentPage,
+  //   filterStatus,
+  //   filterGender,
+  //   filterSpecies
+  // ) => {
+  //   dispatch(
+  //     getCharacters(currentPage, filterStatus, filterGender, filterSpecies)
+  //   );
+  // };
 
   return (
     <div className="filter">
@@ -84,41 +51,17 @@ function Filter({ currentPage }) {
         <div className="btns">
           <LocalHospitalIcon fontSize="large" color="secondary" />
           <p>Status:</p>
-          {statusButtonsNames.map((element) => (
-            <button
-              value={element}
-              className={classNameFilterStatus(element)}
-              onClick={(e) => handleFilterStatus(e)}
-            >
-              {element || "Show All"}
-            </button>
-          ))}
+          <FilterStatus />
         </div>
         <div className="btns">
           <RedditIcon fontSize="large" color="secondary" />
           <p>Species:</p>
-          {speciesButtonsNames.map((element) => (
-            <button
-              value={element}
-              className={classNameFilterSpecies(element)}
-              onClick={(e) => handleFilterSpecies(e)}
-            >
-              {element || "Show All"}
-            </button>
-          ))}
+          <FilterSpecies />
         </div>
         <div className="btns">
           <WcIcon fontSize="large" color="secondary" />
           <p>Gender:</p>
-          {genderButtonsNames.map((element) => (
-            <button
-              value={element}
-              className={classNameFilterGender(element)}
-              onClick={(e) => handleFilterGender(e)}
-            >
-              {element || "Show All"}
-            </button>
-          ))}
+          <FilterGender />
         </div>
       </div>
     </div>

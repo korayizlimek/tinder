@@ -55,7 +55,6 @@ function Card({
             <span className="card-title">Name:</span> {name}
           </p>
         )}
-        //! burasi cok onemli
         {cartContentInformations.map(
           (information) =>
             information !== "" && (
@@ -63,11 +62,11 @@ function Card({
                 <span className="card-title">
                   {contentFirstLetterUpperCase(information)}:
                 </span>
-                {contentInformationToPropsName(information)}
+                {information}
+                {name}
               </p>
             )
         )}
-        {/* 
         {status !== "" && (
           <p>
             <span className="card-title">Status:</span> {status}
@@ -92,7 +91,7 @@ function Card({
           <p>
             <span className="card-title">Location:</span> {location}{" "}
           </p>
-        )} */}
+        )}
       </Link>
       <div className="card-buttons">
         <IconButton onClick={() => setStar(!star)}>
@@ -119,7 +118,6 @@ function Card({
       </div>
     </div>
   );
-  // Karaktere tıklandığı router ile yeni bir sayfa açılsın ve karakter kartındaki bilgilerin aynısı ve son oynadığı 5 bölümün adlarını görüntüleyebilelim.
 }
 
 export default Card;
