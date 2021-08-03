@@ -63,17 +63,17 @@
   font-weight: bold;
 }
 
-.cardDetail-buttons {
+/* .cardDetail-buttons {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border-left: 1px solid lightgray;
-}
+} */
 
-.card-button-icon {
-  /* color: white ; */
-}
+/* .card-button-icon { */
+/* color: white ; */
+/* } */
 
-.card-button-icon-active {
+/* .card-button-icon-active {
   color: #f21170 !important;
-}
+} */

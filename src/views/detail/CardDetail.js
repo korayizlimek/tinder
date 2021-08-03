@@ -4,23 +4,17 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./CardDetail.css";
 
-// Icons
-import StarRateIcon from "@material-ui/icons/StarRate";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import FlashOnIcon from "@material-ui/icons/FlashOn";
-import { IconButton } from "@material-ui/core";
 import Episode from "../../components/Episode";
 import { useDispatch, useSelector } from "react-redux";
 import { getCharacterDetails } from "../../redux/actions";
+import IconStar from "../../components/IconStar";
+import IconFavorite from "../../components/IconFavorite";
+import IconFlash from "../../components/IconFlash";
 
 function CardDetail() {
   const id = useParams().character;
 
   const character = useSelector((state) => state.characterDetails);
-
-  const [favorite, setFavorite] = useState(false);
-  const [star, setStar] = useState(false);
-  const [flash, setFlash] = useState(false);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -107,27 +101,9 @@ function CardDetail() {
         </div>
       </div>
       <div className="cardDetail-buttons">
-        <IconButton onClick={() => setStar(!star)}>
-          <StarRateIcon
-            className={`card-button-icon ${
-              star ? "card-button-icon-active" : ""
-            }`}
-          />
-        </IconButton>
-        <IconButton onClick={() => setFavorite(!favorite)}>
-          <FavoriteIcon
-            className={`card-button-icon ${
-              favorite ? "card-button-icon-active" : ""
-            }`}
-          />
-        </IconButton>
-        <IconButton onClick={() => setFlash(!flash)}>
-          <FlashOnIcon
-            className={`card-button-icon ${
-              flash ? "card-button-icon-active" : ""
-            }`}
-          />
-        </IconButton>
+        <IconStar />
+        <IconFavorite />
+        <IconFlash />
       </div>
     </div>
   );

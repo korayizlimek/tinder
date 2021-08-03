@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Card.css";
 
-// Icons
-import StarRateIcon from "@material-ui/icons/StarRate";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import FlashOnIcon from "@material-ui/icons/FlashOn";
-
 //Button
-import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
+import IconStar from "./IconStar";
+import IconFavorite from "./IconFavorite";
+import IconFlash from "./IconFlash";
 
 function Card({ id, status, character }) {
-  const [favorite, setFavorite] = useState(false);
-  const [star, setStar] = useState(false);
-  const [flash, setFlash] = useState(false);
-
   let cardClassName;
   if (character.status === "Alive") {
     cardClassName = "card-alive";
@@ -65,27 +58,9 @@ function Card({ id, status, character }) {
         </div>
       </Link>
       <div className="card-buttons">
-        <IconButton onClick={() => setStar(!star)}>
-          <StarRateIcon
-            className={`card-button-icon ${
-              star ? "card-button-icon-active" : ""
-            }`}
-          />
-        </IconButton>
-        <IconButton onClick={() => setFavorite(!favorite)}>
-          <FavoriteIcon
-            className={`card-button-icon ${
-              favorite ? "card-button-icon-active" : ""
-            }`}
-          />
-        </IconButton>
-        <IconButton onClick={() => setFlash(!flash)}>
-          <FlashOnIcon
-            className={`card-button-icon ${
-              flash ? "card-button-icon-active" : ""
-            }`}
-          />
-        </IconButton>
+        <IconStar />
+        <IconFavorite />
+        <IconFlash />
       </div>
     </div>
   );
