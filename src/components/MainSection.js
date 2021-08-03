@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-// import "./Cards.css";
+import React, { useEffect, useState } from "react";
+import { getCharacters } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 // Icons
 import Filter from "./Filter";
@@ -8,51 +9,60 @@ import Characters from "./Characters";
 
 function MainSection() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filterGroup, setFilterGroup] = useState({
+    status: "",
+    species: "",
+    gender: "",
+  });
+
+  useEffect(() => {
+    const resetCurrentPage = 1;
+    changeCurrentPage(resetCurrentPage);
+    refreshCharacters();
+  }, [filterGroup.status, filterGroup.species, filterGroup.gender]);
+
+  useEffect(() => {
+    refreshCharacters();
+  }, [currentPage]);
+
+  const dispatch = useDispatch();
+
+  const refreshCharacters = () => {
+    dispatch(
+      getCharacters(
+        currentPage,
+        filterGroup.status,
+        filterGroup.species,
+        filterGroup.gender
+      )
+    );
+  };
+
+  const handleFilterGroup = (key, value) => {
+    if (key === "status") {
+      setFilterGroup({ ...filterGroup, status: value });
+    }
+    if (key === "species") {
+      setFilterGroup({ ...filterGroup, species: value });
+    }
+    if (key === "gender") {
+      setFilterGroup({ ...filterGroup, gender: value });
+    }
+  };
 
   const changeCurrentPage = (newCurrentPage) => {
     setCurrentPage(newCurrentPage);
   };
 
-  const [filterStatus, setFilterStatus] = useState("");
-  const [filterSpecies, setFilterSpecies] = useState("");
-  const [filterGender, setFilterGender] = useState("");
-
-  useEffect(() => {
-    const resetCurrentPage = 1;
-    refreshCharacters(
-      resetCurrentPage,
-      filterStatus,
-      filterSpecies,
-      filterGender
-    );
-    changeCurrentPage(resetCurrentPage);
-  }, [filterStatus, filterSpecies, filterGender]);
-
-  useEffect(() => {
-    refreshCharacters(currentPage);
-  }, [currentPage]);
-
-  const refreshCharacters = (
-    currentPage,
-    filterStatus,
-    filterGender,
-    filterSpecies
-  ) => {
-    dispatch(
-      getCharacters(currentPage, filterStatus, filterGender, filterSpecies)
-    );
-  };
-
   return (
     <section className="mainSection">
       <Filter
-        currentPage={currentPage}
-        changeCurrentPage={changeCurrentPage}
+        filterGroup={filterGroup}
+        handleFilterGroup={handleFilterGroup}
       />
       <Characters />
       <Pagination
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
         changeCurrentPage={changeCurrentPage}
       />
     </section>

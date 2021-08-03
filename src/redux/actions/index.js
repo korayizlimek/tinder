@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getCharacters =
-  (page, filterStatus, filterGender, filterSpecies) => (dispatch) => {
+  (page, filterStatus, filterSpecies, filterGender) => (dispatch) => {
     axios
       .get(
         `https://rickandmortyapi.com/api/character?page=${page}&status=${filterStatus}&gender=${filterGender}&species=${filterSpecies}`

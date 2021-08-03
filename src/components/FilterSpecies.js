@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const FilterSpecies = () => {
-  const [filterSpecies, setFilterSpecies] = useState("");
-
+const FilterSpecies = ({ filterSpecies, handleFilterGroup }) => {
   const classNameFilterSpecies = (value) => {
     let className = "btn ";
     if (filterSpecies === value) {
@@ -12,7 +10,7 @@ const FilterSpecies = () => {
   };
 
   const handleFilterSpecies = (e) => {
-    setFilterSpecies(e.target.value);
+    handleFilterGroup("species", e.target.value);
   };
 
   const speciesButtonsNames = ["", "Human", "Alien"];
@@ -21,6 +19,7 @@ const FilterSpecies = () => {
     <div>
       {speciesButtonsNames.map((speciesName) => (
         <button
+          key={speciesName}
           value={speciesName}
           className={classNameFilterSpecies(speciesName)}
           onClick={(e) => handleFilterSpecies(e)}

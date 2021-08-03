@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const FilterGender = () => {
-  const [filterGender, setFilterGender] = useState("");
-
+const FilterGender = ({ filterGender, handleFilterGroup }) => {
   const classNameFilterGender = (value) => {
     let className = "btn ";
     if (filterGender === value) {
@@ -12,7 +10,7 @@ const FilterGender = () => {
   };
 
   const handleFilterGender = (e) => {
-    setFilterGender(e.target.value);
+    handleFilterGroup("gender", e.target.value);
   };
 
   const genderButtonsNames = [
@@ -26,6 +24,7 @@ const FilterGender = () => {
     <div>
       {genderButtonsNames.map((genderName) => (
         <button
+          key={genderName}
           value={genderName}
           className={classNameFilterGender(genderName)}
           onClick={(e) => handleFilterGender(e)}

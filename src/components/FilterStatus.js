@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
+import React from "react";
 
-const FilterStatus = () => {
-  const [filterStatus, setFilterStatus] = useState("");
-
+const FilterStatus = ({ filterStatus, handleFilterGroup }) => {
   const classNameFilterStatus = (value) => {
     let className = "btn ";
     if (filterStatus === value) {
@@ -13,7 +10,7 @@ const FilterStatus = () => {
   };
 
   const handleFilterStatus = (e) => {
-    setFilterStatus(e.target.value);
+    handleFilterGroup("status", e.target.value);
   };
 
   const statusButtonsNames = ["", "Alive", "Dead", "Unknown"];
@@ -22,6 +19,7 @@ const FilterStatus = () => {
     <div>
       {statusButtonsNames.map((statusName) => (
         <button
+          name={statusName}
           value={statusName}
           className={classNameFilterStatus(statusName)}
           onClick={(e) => handleFilterStatus(e)}

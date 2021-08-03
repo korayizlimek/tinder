@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const Pagination = ({ currentPage, setCurrentPage }) => {
+const Pagination = ({ currentPage, changeCurrentPage }) => {
   const pagesNumbers = useSelector((state) => state.pages);
   return (
     <div className="btns pagination">
@@ -12,7 +12,7 @@ const Pagination = ({ currentPage, setCurrentPage }) => {
             currentPage === value + 1 ? "button-active" : ""
           }`}
           onClick={() => {
-            setCurrentPage(value + 1);
+            changeCurrentPage(value + 1);
           }}
         >
           {value + 1}
