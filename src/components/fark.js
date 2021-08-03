@@ -10,59 +10,77 @@ import FlashOnIcon from "@material-ui/icons/FlashOn";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
 
-function Card({ id, status, character }) {
+function Card({
+  id,
+  avatarUrl,
+  name,
+  status,
+  species,
+  gender,
+  type,
+  location,
+}) {
   const [favorite, setFavorite] = useState(false);
   const [star, setStar] = useState(false);
   const [flash, setFlash] = useState(false);
 
   let cardClassName;
-  if (character.status === "Alive") {
+  if (status === "Alive") {
     cardClassName = "card-alive";
-  } else if (character.status === "Dead") {
+  } else if (status === "Dead") {
     cardClassName = "card-dead";
   } else {
     cardClassName = "";
   }
 
-  const cartContentInformations = [
-    "name",
-    "status",
-    "species",
-    "gender",
-    "type",
-    "location",
-  ];
+  const cartContentInformations = ["name", "status"];
 
   const contentFirstLetterUpperCase = (information) => {
     return information.charAt(0).toUpperCase() + information.slice(1);
   };
 
   const contentInformationToPropsName = (information) => {
-    if (information === "location") {
-      return character[information].name;
-    }
-    return character[information];
+    return information;
   };
 
   return (
     <div className={`card ${cardClassName}`}>
       <Link to={`/detail/${id}`}>
         <div className="card-image-section">
-          <img className="card-image" src={character.image} alt="avatar" />
+          <img className="card-image" src={avatarUrl} alt="avatar" />
         </div>
-        <div className="card-content-section">
-          {cartContentInformations.map(
-            (information) =>
-              contentInformationToPropsName(information) !== "" && (
-                <p>
-                  <span className="card-title">
-                    {contentFirstLetterUpperCase(information)}:
-                  </span>
-                  {contentInformationToPropsName(information)}
-                </p>
-              )
-          )}
-        </div>
+        <div className="card-content-section"></div>
+        {name !== "" && (
+          <p>
+            <span className="card-title">Name:</span> {name}
+          </p>
+        )}
+
+        {status !== "" && (
+          <p>
+            <span className="card-title">Status:</span> {status}
+          </p>
+        )}
+        {species !== "" && (
+          <p>
+            <span className="card-title">Species:</span> {species}{" "}
+          </p>
+        )}
+        {gender !== "" && (
+          <p>
+            <span className="card-title">Gender:</span> {gender}
+          </p>
+        )}
+        {type !== "" && (
+          <p>
+            <span className="card-title">Type:</span> {type}{" "}
+          </p>
+        )}
+        {location !== "" && (
+          <p>
+            <span className="card-title">Location:</span> {location}{" "}
+          </p>
+        )}
       </Link>
       <div className="card-buttons">
         <IconButton onClick={() => setStar(!star)}>
@@ -89,6 +107,7 @@ function Card({ id, status, character }) {
       </div>
     </div>
   );
+  // Karaktere tıklandığı router ile yeni bir sayfa açılsın ve karakter kartındaki bilgilerin aynısı ve son oynadığı 5 bölümün adlarını görüntüleyebilelim.
 }
 
 export default Card;

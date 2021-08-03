@@ -8,17 +8,7 @@ const Characters = () => {
   return (
     <div className="characters">
       {characters.map((character) => (
-        <Card
-          key={character.id}
-          id={character.id}
-          avatarUrl={character.image}
-          name={character.name}
-          status={character.status}
-          species={character.species}
-          gender={character.gender}
-          type={character.type}
-          location={character.location.name}
-        />
+        <Card character={character} />
       ))}
     </div>
   );

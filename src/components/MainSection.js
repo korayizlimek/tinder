@@ -25,6 +25,10 @@ function MainSection() {
     refreshCharacters();
   }, [currentPage]);
 
+  const changeCurrentPage = (newCurrentPage) => {
+    setCurrentPage(newCurrentPage);
+  };
+
   const dispatch = useDispatch();
 
   const refreshCharacters = () => {
@@ -48,10 +52,6 @@ function MainSection() {
     if (key === "gender") {
       setFilterGroup({ ...filterGroup, gender: value });
     }
-  };
-
-  const changeCurrentPage = (newCurrentPage) => {
-    setCurrentPage(newCurrentPage);
   };
 
   return (

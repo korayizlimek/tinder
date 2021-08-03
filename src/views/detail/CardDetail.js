@@ -32,6 +32,8 @@ function CardDetail() {
     return lastEpisodes;
   };
 
+  const cartDetailDescription = [{ title: "Name", value: "name" }];
+
   return (
     <div className="cardDetail">
       <div className="cardDetail-image-section">
@@ -43,9 +45,19 @@ function CardDetail() {
       </div>
       <div className="cardDetail-descriptions-container">
         <div className="cardDetail-description">
+          <p className="cardDetail-description-title">
+            {cartDetailDescription[0].title} :
+          </p>
+          {/* <p className="cardDetail-description-value">{character.name}</p> */}
+          <p className="cardDetail-description-value">
+            {}
+            {character[cartDetailDescription[0].value]}
+          </p>
+        </div>
+        {/* <div className="cardDetail-description">
           <p className="cardDetail-description-title">Name :</p>
           <p className="cardDetail-description-value">{character.name}</p>
-        </div>
+        </div> */}
         <div className="cardDetail-description">
           <p className="cardDetail-description-title">Status :</p>
           <p className="cardDetail-description-value">

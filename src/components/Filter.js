@@ -5,9 +5,11 @@ import "./Filter.css";
 import WcIcon from "@material-ui/icons/Wc";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import RedditIcon from "@material-ui/icons/Reddit";
-import FilterStatus from "./FilterStatus";
-import FilterSpecies from "./FilterSpecies";
-import FilterGender from "./FilterGender";
+import FilterButtons from "./FilterButtons";
+
+const statusButtonsNames = ["", "Alive", "Dead", "Unknown"];
+const speciesButtonsNames = ["", "Human", "Alien"];
+const genderButtonsNames = ["", "Male", "Female", "Genderless", "Unknown"];
 
 function Filter({ filterGroup, handleFilterGroup }) {
   return (
@@ -16,25 +18,31 @@ function Filter({ filterGroup, handleFilterGroup }) {
         <div className="btns">
           <LocalHospitalIcon fontSize="large" color="secondary" />
           <p>Status:</p>
-          <FilterStatus
-            filterStatus={filterGroup.status}
+          <FilterButtons
+            type={"status"}
+            filterType={filterGroup.status}
             handleFilterGroup={handleFilterGroup}
+            typeButtonNames={statusButtonsNames}
           />
         </div>
         <div className="btns">
           <RedditIcon fontSize="large" color="secondary" />
           <p>Species:</p>
-          <FilterSpecies
-            filterSpecies={filterGroup.species}
+          <FilterButtons
+            type={"species"}
+            filterType={filterGroup.species}
             handleFilterGroup={handleFilterGroup}
+            typeButtonNames={speciesButtonsNames}
           />
         </div>
         <div className="btns">
           <WcIcon fontSize="large" color="secondary" />
           <p>Gender:</p>
-          <FilterGender
-            filterGender={filterGroup.gender}
+          <FilterButtons
+            type={"gender"}
+            filterType={filterGroup.gender}
             handleFilterGroup={handleFilterGroup}
+            typeButtonNames={genderButtonsNames}
           />
         </div>
       </div>
