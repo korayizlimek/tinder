@@ -12,9 +12,11 @@ export const getCharacters =
         dispatch({ type: "GET_CHARACTERS", payload: payload });
       })
       .catch((error) => {
+        console.log("calisti error");
+        const payload = "";
         dispatch({
-          type: "GET_CHARACTERS_ERROR",
-          payload: "Characters could not be get from API",
+          type: "GET_CHARACTERS_ERROR_NOT_FOUND",
+          payload: payload,
         });
       });
   };

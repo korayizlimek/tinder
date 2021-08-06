@@ -1,8 +1,5 @@
-import axios from "axios";
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
-import "./CardDetail.css";
 
 import Episode from "../../components/Episode";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,12 +18,10 @@ function CardDetail() {
     dispatch(getCharacterDetails(id));
   }, []);
 
-  const getCharacter = (characters) => {
-    let lastEpisodes = characters.episode?.reverse().slice(0, 5);
-    return lastEpisodes;
+  const lastEpisodes = (character) => {
+    const lastFiveEpisodes = character.episode?.reverse().slice(0, 5);
+    return lastFiveEpisodes;
   };
-
-  const cartDetailDescription = [{ title: "Name", value: "name" }];
 
   return (
     <div className="cardDetail">
@@ -38,20 +33,6 @@ function CardDetail() {
         />
       </div>
       <div className="cardDetail-descriptions-container">
-        <div className="cardDetail-description">
-          <p className="cardDetail-description-title">
-            {cartDetailDescription[0].title} :
-          </p>
-          {/* <p className="cardDetail-description-value">{character.name}</p> */}
-          <p className="cardDetail-description-value">
-            {}
-            {character[cartDetailDescription[0].value]}
-          </p>
-        </div>
-        {/* <div className="cardDetail-description">
-          <p className="cardDetail-description-title">Name :</p>
-          <p className="cardDetail-description-value">{character.name}</p>
-        </div> */}
         <div className="cardDetail-description">
           <p className="cardDetail-description-title">Status :</p>
           <p className="cardDetail-description-value">
@@ -94,7 +75,7 @@ function CardDetail() {
         <div className="cardDetail-description">
           <p className="cardDetail-description-title">Episodes :</p>
           <p className="cardDetail-description-value">
-            {getCharacter(character)?.map((episode) => (
+            {lastEpisodes(character)?.map((episode) => (
               <Episode episode={episode} />
             ))}
           </p>

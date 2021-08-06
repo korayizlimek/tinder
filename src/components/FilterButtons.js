@@ -9,7 +9,7 @@ const FilterButtons = ({
   const classNameFilterType = (value) => {
     let className = "btn ";
     if (filterType === value) {
-      className += "button-active";
+      className += "btn-active";
     }
     return className;
   };

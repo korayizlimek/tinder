@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Chat.css";
 
 function Chat({ imageUri, name, message, timestamp }) {
   return (

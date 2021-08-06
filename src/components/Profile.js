@@ -1,6 +1,5 @@
 import React from "react";
 import { Login } from "../views";
-import "./Profile.css";
 
 function Profile() {
   const user = false;

@@ -1,5 +1,4 @@
 import React from "react";
-import "./Filter.css";
 
 // Icons
 import WcIcon from "@material-ui/icons/Wc";

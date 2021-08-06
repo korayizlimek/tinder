@@ -1,13 +1,8 @@
-:root {
-  --card-alive: linear-gradient(#cb356b, #0575e6);
-  --card-unkdown: linear-gradient(to left, #eb5757, #000000);
-  --card-dead: linear-gradient(to left, #159957, #155799);
-  --card-deade: gray;
-}
+@import "../abstracts/variables";
 
 .cardDetail {
   margin: 5% 20%;
-  border: 5px solid #f21170;
+  border: 5px solid $primary-color;
   display: flex;
   padding: 20px;
   gap: 10px;
@@ -59,7 +54,7 @@
 }
 
 .cardDetail-description-value {
-  color: #f21170;
+  color: $primary-color;
   font-weight: bold;
 }
 
@@ -75,5 +70,5 @@
 }
 
 .card-button-icon-active {
-  color: #f21170 !important;
+  color: $primary-color !important;
 }

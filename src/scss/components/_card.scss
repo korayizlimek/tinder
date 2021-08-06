@@ -1,0 +1,54 @@
+@import "../abstracts//variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 5px solid transparent;
+  border-image-slice: 1;
+  border-image-source: $card-unkdown;
+  box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black;
+  padding: 15px;
+}
+
+.card-image {
+  border-radius: 10px;
+}
+.card-alive {
+  border-image-source: $card-alive;
+}
+
+.card-dead {
+  border-image-source: $card-dead;
+  opacity: 0.6;
+}
+
+.card-title {
+  color: gray;
+}
+
+.card .card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card-button-icon {
+  /* box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3) !important; */
+  font-size: 50px !important;
+  color: lightgray !important;
+}
+
+.card-button-icon-active {
+  color: $primary-color !important;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 6px 6px rgba(63, 45, 45, 0.8);
+}

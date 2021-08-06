@@ -1,5 +1,4 @@
 import React from "react";
-import "./Card.css";
 
 //Button
 import { Link } from "react-router-dom";
@@ -39,7 +38,7 @@ function Card({ id, status, character }) {
 
   return (
     <div className={`card ${cardClassName}`}>
-      <Link to={`/detail/${id}`}>
+      <Link to={`/detail/${character.id}`}>
         <div className="card-image-section">
           <img className="card-image" src={character.image} alt="avatar" />
         </div>

@@ -44,6 +44,200 @@
   }
 }
 
+.chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  height: 70px;
+  width: 700px;
+  border-bottom: 1px solid #ffffff;
+  gap: 20px;
+  border: 1px solid lightgray;
+}
+
+.chat-image-section {
+  width: 10%;
+  /* flex: 1; */
+}
+
+.chat-image {
+  height: 70px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 100%;
+}
+
+.chat-details {
+  width: 50%;
+}
+
+.chat-details-message {
+  color: gray;
+}
+
+.chat-timestamp {
+  width: 20%;
+  color: lightgray;
+}
+
+.notResult {
+  font-size: large;
+  font-weight: bold;
+  color: #f21170;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.notResult-icon {
+  font-size: 50px !important;
+}
+
+.cards-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
+.btn {
+  margin-right: 10px;
+  color: lightslategray;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid lightslategray;
+}
+
+.btn-active {
+  color: #f21170;
+  border: 1px solid #f21170;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  border: 5px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #eb5757, #000000);
+  -webkit-box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black;
+  padding: 15px;
+}
+
+.card-image {
+  border-radius: 10px;
+}
+
+.card-alive {
+  border-image-source: linear-gradient(#cb356b, #0575e6);
+}
+
+.card-dead {
+  border-image-source: linear-gradient(to left, #141e30, #a43931);
+  opacity: 0.6;
+}
+
+.card-title {
+  color: gray;
+}
+
+.card .card-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card-button-icon {
+  /* box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.3) !important; */
+  font-size: 50px !important;
+  color: lightgray !important;
+}
+
+.card-button-icon-active {
+  color: #f21170 !important;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 6px 6px 6px rgba(63, 45, 45, 0.8);
+          box-shadow: 0px 6px 6px 6px rgba(63, 45, 45, 0.8);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 3px solid lightgray;
+}
+
+.header-logo {
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 20px;
+}
+
+.header-icon {
+  padding: 20px;
+  color: #f21170;
+}
+
 @media (min-width: 320px) {
   .cards-container {
     -ms-grid-columns: auto;
@@ -188,13 +382,6 @@
   border: 1px solid black;
   font-weight: bold;
   color: black;
-}
-
-:root {
-  --card-alive: linear-gradient(#cb356b, #0575e6);
-  --card-unkdown: linear-gradient(to left, #eb5757, #000000);
-  --card-dead: linear-gradient(to left, #159957, #155799);
-  --card-deade: gray;
 }
 
 .cardDetail {

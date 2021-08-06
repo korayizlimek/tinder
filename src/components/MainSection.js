@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCharacters } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Icons
 import Filter from "./Filter";
@@ -53,6 +53,8 @@ function MainSection() {
       setFilterGroup({ ...filterGroup, gender: value });
     }
   };
+
+  const characters = useSelector((state) => state.characters);
 
   return (
     <section className="mainSection">
