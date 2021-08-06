@@ -9,7 +9,7 @@ const Pagination = ({ currentPage, changeCurrentPage }) => {
           key={value}
           id={value + 1}
           className={`btn ${
-            currentPage === value + 1 ? "button-active" : ""
+            currentPage === value + 1 ? "btn-active" : ""
           }`}
           onClick={() => {
             changeCurrentPage(value + 1);
